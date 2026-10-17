@@ -1,0 +1,14 @@
+{
+  "name": "spec-driven-skills",
+  "owner": {
+    "name": "Spec Driven Team"
+  },
+  "description": "Spec-Driven Multi-Agent Skills as an installable agent plugin.",
+  "plugins": [
+    {
+      "name": "spec-driven-skills",
+      "source": "./",
+      "description": "9 Spec-Driven Agent Skills for autonomous software engineering, architecture, and compliance."
+    }
+  ]
+}

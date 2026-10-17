@@ -1,0 +1,18 @@
+{
+  "name": "spec-driven-skills",
+  "version": "1.0.0",
+  "description": "Spec-Driven Multi-Agent Skills for autonomous software engineering, architecture, testing, and compliance.",
+  "author": {
+    "name": "Spec Driven Team"
+  },
+  "license": "MIT",
+  "keywords": [
+    "spec-driven",
+    "skills",
+    "tdd",
+    "architecture",
+    "compliance",
+    "code-review",
+    "devops"
+  ]
+}

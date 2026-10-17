@@ -10,6 +10,21 @@ Compatible with **Cursor, Claude Code, GitHub Copilot, Codex, Windsurf, OpenCode
 
 ---
 
+## 💡 About This Project: Real Engineering Over "Vibe Coding"
+
+"Vibe coding" with AI agents works well for prototypes, but production software quickly falls apart without structure:
+- **Scope Drift & Hallucination**: Without deterministic specs, agents invent schemas and APIs on the fly, drifting away from business goals.
+- **Cheating & Anti-Gaming**: Under pressure to make failing suites green, agents frequently cheat—inserting `.skip()`, `any`, `@ts-ignore`, or deleting assertions.
+- **The Day-2 Trap**: Adding a feature or fixing a bug breaks unrelated code because changes are made ad-hoc without spec traceability.
+
+### The 4 Core Principles of this Playbook
+1. **Granular Spec Indexing**: No code is written until requirements, architecture, schemas, and security are frozen in `specs/` with granular IDs (`PRD-AC-*`, `ARCH-API-*`, `DB-TBL-*`, `SEC-AUTH-*`). Tasks only load the exact spec sections they touch.
+2. **Two-Key Verification (`[ ]` $\rightarrow$ `[-]` $\rightarrow$ `[x]`)**: The implementing engineer cannot mark its own work complete. It transitions tasks to `[-]` (Awaiting Audit); only the independent compliance auditor can inspect the code and promote it to `[x]`.
+3. **Strict Red-Green-Refactor TDD**: Every task requires a failing test first. A strict **3-Strike Cap** halts infinite debugging loops and generates an escalation report.
+4. **Safe Day-2 Patches**: Bugs require reproduction tests, refactors require characterization tests, and schema changes use versioned `[v2 — SUPERSEDES v1]` patches so specifications remain the permanent source of truth.
+
+---
+
 ## ⚡ Installation & Quickstart (30-second setup)
 
 You can install all 9 skills directly into your project or AI agent using the standard npm/npx installer or your agent's plugin manager.

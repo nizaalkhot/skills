@@ -2,8 +2,31 @@
   "name": "spec-driven-skills",
   "version": "1.0.0",
   "private": true,
-  "description": "Spec-Driven Multi-Agent Skills for autonomous software engineering, architecture, testing, and compliance.",
+  "description": "Spec-Driven Multi-Agent Skills for Real Engineers: Autonomous specification, system architecture, database modeling, security isolation, design systems, TDD implementation, DevOps CI/CD, and independent spec auditing.",
   "type": "module",
+  "author": {
+    "name": "nizaalkhot",
+    "url": "https://github.com/nizaalkhot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nizaalkhot/skills"
+  },
+  "homepage": "https://github.com/nizaalkhot/skills#readme",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "skills",
+    "spec-driven",
+    "tdd",
+    "system-architecture",
+    "code-review",
+    "compliance-auditor",
+    "cursor",
+    "claude-code",
+    "github-copilot",
+    "codex"
+  ],
   "scripts": {
     "changeset": "changeset",
     "version": "changeset version && node scripts/sync-plugin-version.mjs",
@@ -12,6 +35,5 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.1"
-  },
-  "license": "MIT"
+  }
 }

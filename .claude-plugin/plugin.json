@@ -1,14 +1,18 @@
 {
   "name": "spec-driven-skills",
   "version": "1.0.0",
-  "description": "Spec-Driven Multi-Agent Skills for autonomous software engineering, architecture, testing, and compliance.",
+  "description": "Spec-Driven Multi-Agent Skills for Real Engineers: Autonomous specification, system architecture, database modeling, security isolation, design systems, TDD implementation, DevOps CI/CD, and independent spec auditing.",
   "author": {
-    "name": "Spec Driven Team"
+    "name": "nizaalkhot",
+    "url": "https://github.com/nizaalkhot"
   },
+  "homepage": "https://github.com/nizaalkhot/skills#readme",
+  "repository": "https://github.com/nizaalkhot/skills",
   "license": "MIT",
   "keywords": [
     "spec-driven",
     "skills",
+    "agent-skills",
     "tdd",
     "architecture",
     "compliance",

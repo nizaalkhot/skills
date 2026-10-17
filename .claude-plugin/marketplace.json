@@ -1,14 +1,15 @@
 {
-  "name": "spec-driven-skills",
+  "name": "nizaalkhot",
   "owner": {
-    "name": "Spec Driven Team"
+    "name": "nizaalkhot",
+    "url": "https://github.com/nizaalkhot"
   },
-  "description": "Spec-Driven Multi-Agent Skills as an installable agent plugin.",
+  "description": "Spec-Driven Multi-Agent Skills for Real Engineers: Autonomous specification, architecture, testing, and compliance for AI coding agents.",
   "plugins": [
     {
       "name": "spec-driven-skills",
       "source": "./",
-      "description": "9 Spec-Driven Agent Skills for autonomous software engineering, architecture, and compliance."
+      "description": "9 Spec-Driven Agent Skills for autonomous software engineering, architecture, TDD, and independent spec compliance auditing."
     }
   ]
 }

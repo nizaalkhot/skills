@@ -1,8 +1,10 @@
 # Spec-Driven Multi-Agent Skills
 
-[![skills.sh](https://skills.sh/b/spec-driven/skills)](https://skills.sh)
+[![skills.sh](https://skills.sh/b/nizaalkhot/skills)](https://skills.sh/nizaalkhot/skills)
+[![Release](https://img.shields.io/badge/release-v1.0.0-blue.svg)](https://github.com/nizaalkhot/skills/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-A complete, production-grade **9-Skill Spec-Driven Pipeline** to design, architect, implement, test, and audit software using AI coding agents with granular ID traceability, test-first execution, and independent spec auditing.
+**Spec-Driven Multi-Agent Skills for Real Engineers**: A complete, battle-tested **9-Skill Pipeline** for autonomous product specification, system architecture, database modeling, security isolation, design systems, test-driven engineering (TDD), DevOps CI/CD, and independent compliance auditing.
 
 Compatible with **Cursor, Claude Code, GitHub Copilot, Codex, Windsurf, OpenCode, Devin, Gemini CLI**, and any tool supporting the open Agent Skills standard.
 
@@ -14,19 +16,19 @@ You can install all 9 skills directly into your project or AI agent using the st
 
 ### Method 1: Using `npx skills` (Recommended for all agents)
 
-Install all skills into your current workspace:
+Install all 9 skills into your current workspace:
 ```bash
-npx skills@latest add <owner>/<repo>
+npx skills@latest add nizaalkhot/skills
 ```
 
 Install a specific skill only (e.g. `system-architect`):
 ```bash
-npx skills@latest add <owner>/<repo> --skill=system-architect
+npx skills@latest add nizaalkhot/skills --skill=system-architect
 ```
 
 Target a specific agent directly (`-a` flag):
 ```bash
-npx skills@latest add <owner>/<repo> -a cursor    # cursor, claude-code, copilot, windsurf, opencode, devin
+npx skills@latest add nizaalkhot/skills -a cursor    # cursor, claude-code, copilot, windsurf, opencode, devin
 ```
 
 To update installed skills at any time:
@@ -41,10 +43,10 @@ npx skills@latest update
 <details>
 <summary><strong>Claude Code</strong></summary>
 
-Install directly from GitHub via plugin:
+Install directly from GitHub:
 ```bash
-claude plugin marketplace add <owner>/<repo>
-claude plugin install spec-driven-skills@<owner>
+claude plugin marketplace add nizaalkhot/skills
+claude plugin install spec-driven-skills@nizaalkhot
 ```
 </details>
 
@@ -52,8 +54,8 @@ claude plugin install spec-driven-skills@<owner>
 <summary><strong>Codex</strong></summary>
 
 ```bash
-codex plugin marketplace add <owner>/<repo>
-codex plugin add spec-driven-skills@<owner>
+codex plugin marketplace add nizaalkhot/skills
+codex plugin add spec-driven-skills@nizaalkhot
 ```
 Updates itself on startup.
 </details>
@@ -62,18 +64,18 @@ Updates itself on startup.
 <summary><strong>GitHub Copilot (CLI & VS Code)</strong></summary>
 
 ```bash
-copilot plugin marketplace add <owner>/<repo>
-copilot plugin install spec-driven-skills@<owner>
+copilot plugin marketplace add nizaalkhot/skills
+copilot plugin install spec-driven-skills@nizaalkhot
 ```
 
-In VS Code: Open command palette, select **Chat: Install Plugin From Source**, and enter `https://github.com/<owner>/<repo>`.
+In VS Code: Open command palette, select **Chat: Install Plugin From Source**, and enter `https://github.com/nizaalkhot/skills`.
 </details>
 
 <details>
 <summary><strong>Gemini CLI</strong></summary>
 
 ```bash
-gemini skills install https://github.com/<owner>/<repo>.git --path skills
+gemini skills install https://github.com/nizaalkhot/skills.git --path skills
 ```
 Re-run command to update.
 </details>
@@ -162,4 +164,5 @@ Always route post-MVP changes through **`change-and-triage-lead`**:
 
 ## 📄 License
 
-MIT
+This project is licensed under the [MIT License](./LICENSE) - see the [LICENSE](./LICENSE) file for details.  
+Copyright (c) 2026 nizaalkhot.

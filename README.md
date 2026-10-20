@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/logos/spec-driven-skills.svg" width="140" height="140" alt="Spec-Driven Multi-Agent Skills Logo" />
+</p>
+
 # Spec-Driven Multi-Agent Skills
 
 [![skills.sh](https://skills.sh/b/nizaalkhot/skills)](https://skills.sh/nizaalkhot/skills)
@@ -117,17 +121,17 @@ specs/
 
 ## 🛠️ The 9 Agent Skills Overview
 
-| # | Skill Name | Role | Reads (Inputs) | Writes / Updates (Outputs) |
-| :- | :--- | :--- | :--- | :--- |
-| **1** | [`product-specifier`](./skills/product-specifier/SKILL.md) | Product Manager | User Idea Prompt | `specs/PRD.md` |
-| **2** | [`system-architect`](./skills/system-architect/SKILL.md) | Principal System & Security Architect | `specs/PRD.md` | `specs/ARCHITECTURE.md`<br>`specs/DATABASE.md`<br>`specs/SECURITY.md` |
-| **3** | [`design-and-standards-lead`](./skills/design-and-standards-lead/SKILL.md) | Staff Frontend & Quality Lead | `PRD.md`, `ARCHITECTURE.md`, `DATABASE.md`, `SECURITY.md` | `specs/DESIGN_SYSTEM.md`<br>`specs/CODE_STYLE.md`<br>`specs/TESTING.md` |
-| **4** | [`task-decomposer`](./skills/task-decomposer/SKILL.md) | Agile Delivery Lead | All 7 `specs/*.md` files | `specs/TASKS.md` (Greenfield or Delta Mode) |
-| **5** | [`senior-software-engineer`](./skills/senior-software-engineer/SKILL.md) | Senior Full-Stack Engineer | `specs/TASKS.md` + Referenced Spec IDs | Code + Tests + Atomic Git Commit (`[ ]` $\rightarrow$ `[-]`) |
-| **6** | [`spec-compliance-auditor`](./skills/spec-compliance-auditor/SKILL.md) | Independent QA & Security Reviewer | `[-]` tasks in `TASKS.md` + Referenced Spec IDs | Audits code/tests (`[-]` $\rightarrow$ `[✓]` or rejects to `[ ]`) |
-| **7** | [`devops-infrastructure-engineer`](./skills/devops-infrastructure-engineer/SKILL.md) | Principal DevOps Engineer | Tracked Infra Tasks in `TASKS.md` + Specs | `.env.example`, `.github/workflows/ci.yml`, `Dockerfile` |
-| **8** | [`change-and-triage-lead`](./skills/change-and-triage-lead/SKILL.md) | Day-2 Release & Triage Architect | Hotfix / Bug / Refactor / Feature Request | Patches `specs/*.md` (`[SUPERSEDES]`) + Appends to `TASKS.md` |
-| **9** | [`brownfield-reverse-specifier`](./skills/brownfield-reverse-specifier/SKILL.md) | Staff Systems Archaeologist | Existing Repo without `specs/` | Reverse-engineers all 7 `specs/*.md` + baseline `TASKS.md` |
+| Logo | # | Skill Name | Role | Reads (Inputs) | Writes / Updates (Outputs) |
+| :---: | :- | :--- | :--- | :--- | :--- |
+| <img src="./assets/logos/product-specifier.svg" width="38" height="38" alt="product-specifier" /> | **1** | [`product-specifier`](./skills/product-specifier/SKILL.md) | Product Manager | User Idea Prompt | `specs/PRD.md` |
+| <img src="./assets/logos/system-architect.svg" width="38" height="38" alt="system-architect" /> | **2** | [`system-architect`](./skills/system-architect/SKILL.md) | Principal System & Security Architect | `specs/PRD.md` | `specs/ARCHITECTURE.md`<br>`specs/DATABASE.md`<br>`specs/SECURITY.md` |
+| <img src="./assets/logos/design-and-standards-lead.svg" width="38" height="38" alt="design-and-standards-lead" /> | **3** | [`design-and-standards-lead`](./skills/design-and-standards-lead/SKILL.md) | Staff Frontend & Quality Lead | `PRD.md`, `ARCHITECTURE.md`, `DATABASE.md`, `SECURITY.md` | `specs/DESIGN_SYSTEM.md`<br>`specs/CODE_STYLE.md`<br>`specs/TESTING.md` |
+| <img src="./assets/logos/task-decomposer.svg" width="38" height="38" alt="task-decomposer" /> | **4** | [`task-decomposer`](./skills/task-decomposer/SKILL.md) | Agile Delivery Lead | All 7 `specs/*.md` files | `specs/TASKS.md` (Greenfield or Delta Mode) |
+| <img src="./assets/logos/senior-software-engineer.svg" width="38" height="38" alt="senior-software-engineer" /> | **5** | [`senior-software-engineer`](./skills/senior-software-engineer/SKILL.md) | Senior Full-Stack Engineer | `specs/TASKS.md` + Referenced Spec IDs | Code + Tests + Atomic Git Commit (`[ ]` $\rightarrow$ `[-]`) |
+| <img src="./assets/logos/spec-compliance-auditor.svg" width="38" height="38" alt="spec-compliance-auditor" /> | **6** | [`spec-compliance-auditor`](./skills/spec-compliance-auditor/SKILL.md) | Independent QA & Security Reviewer | `[-]` tasks in `TASKS.md` + Referenced Spec IDs | Audits code/tests (`[-]` $\rightarrow$ `[✓]` or rejects to `[ ]`) |
+| <img src="./assets/logos/devops-infrastructure-engineer.svg" width="38" height="38" alt="devops-infrastructure-engineer" /> | **7** | [`devops-infrastructure-engineer`](./skills/devops-infrastructure-engineer/SKILL.md) | Principal DevOps Engineer | Tracked Infra Tasks in `TASKS.md` + Specs | `.env.example`, `.github/workflows/ci.yml`, `Dockerfile` |
+| <img src="./assets/logos/change-and-triage-lead.svg" width="38" height="38" alt="change-and-triage-lead" /> | **8** | [`change-and-triage-lead`](./skills/change-and-triage-lead/SKILL.md) | Day-2 Release & Triage Architect | Hotfix / Bug / Refactor / Feature Request | Patches `specs/*.md` (`[SUPERSEDES]`) + Appends to `TASKS.md` |
+| <img src="./assets/logos/brownfield-reverse-specifier.svg" width="38" height="38" alt="brownfield-reverse-specifier" /> | **9** | [`brownfield-reverse-specifier`](./skills/brownfield-reverse-specifier/SKILL.md) | Staff Systems Archaeologist | Existing Repo without `specs/` | Reverse-engineers all 7 `specs/*.md` + baseline `TASKS.md` |
 
 ---
 

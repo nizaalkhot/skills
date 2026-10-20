@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="tdBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#261705"/>
+      <stop offset="60%" stop-color="#120B02"/>
+      <stop offset="100%" stop-color="#050301"/>
+    </radialGradient>
+
+    <!-- Amber-Tangerine Gradient -->
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="40%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Orange Gradient -->
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+
+    <!-- Task Node Glow -->
+    <filter id="tdGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#tdBg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="url(#amberGrad)" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Matrix Flow Grid in Background -->
+  <g opacity="0.12" stroke="#F59E0B" stroke-width="1.5">
+    <line x1="256" y1="16" x2="256" y2="496"/>
+    <line x1="150" y1="16" x2="150" y2="496"/>
+    <line x1="362" y1="16" x2="362" y2="496"/>
+    <line x1="16" y1="120" x2="496" y2="120"/>
+    <line x1="16" y1="230" x2="496" y2="230"/>
+    <line x1="16" y1="360" x2="496" y2="360"/>
+  </g>
+
+  <!-- Directed Graph Dependency Connecting Lines -->
+  <g stroke="url(#amberGrad)" stroke-width="3.5" opacity="0.85" stroke-linecap="round">
+    <!-- Level 1 Root to Level 2 Left & Right -->
+    <line x1="256" y1="125" x2="160" y2="235"/>
+    <line x1="256" y1="125" x2="352" y2="235"/>
+
+    <!-- Level 2 Left to Level 3 Nodes -->
+    <line x1="160" y1="235" x2="105" y2="370"/>
+    <line x1="160" y1="235" x2="205" y2="370"/>
+
+    <!-- Cross-dependency Edge -->
+    <line x1="352" y1="235" x2="205" y2="370" stroke-dasharray="6 4" stroke="url(#orangeGrad)"/>
+
+    <!-- Level 2 Right to Level 3 Nodes -->
+    <line x1="352" y1="235" x2="310" y2="370"/>
+    <line x1="352" y1="235" x2="410" y2="370"/>
+  </g>
+
+  <!-- DAG Flow Direction Arrows -->
+  <g fill="#FDE047" opacity="0.9">
+    <polygon points="208,180 200,168 215,172"/>
+    <polygon points="304,180 312,168 297,172"/>
+    <polygon points="132,302 124,290 139,295"/>
+    <polygon points="182,302 175,290 190,295"/>
+    <polygon points="331,302 338,290 323,295"/>
+    <polygon points="381,302 388,290 373,295"/>
+  </g>
+
+  <!-- LEVEL 1: Root Node (Master Spec / Epics) -->
+  <g transform="translate(256, 115)" filter="url(#tdGlow)">
+    <circle cx="0" cy="0" r="38" fill="#2E1B05" stroke="url(#amberGrad)" stroke-width="3.5"/>
+    <!-- Central Prism Core -->
+    <polygon points="0,-18 16,10 -16,10" fill="url(#amberGrad)"/>
+    <circle cx="0" cy="1" r="5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- LEVEL 2: Intermediate Feature Slices -->
+  <!-- Left Node (Phase 1) -->
+  <g transform="translate(160, 235)" filter="url(#tdGlow)">
+    <rect x="-28" y="-28" width="56" height="56" rx="16" fill="#2E1B05" stroke="url(#amberGrad)" stroke-width="3"/>
+    <!-- Checklist symbol -->
+    <path d="M -12,-2 L -4,6 L 14,-12" fill="none" stroke="#FDE047" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right Node (Phase 2) -->
+  <g transform="translate(352, 235)" filter="url(#tdGlow)">
+    <rect x="-28" y="-28" width="56" height="56" rx="16" fill="#2E1B05" stroke="url(#orangeGrad)" stroke-width="3"/>
+    <!-- Clock / Sprint cycle -->
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#F97316" stroke-width="2.5"/>
+    <polyline points="0,-8 0,0 6,4" fill="none" stroke="#FDE047" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- LEVEL 3: Atomic Task Nodes (<= 3-file tasks) -->
+  <!-- Task Node 1 -->
+  <g transform="translate(105, 370)" filter="url(#tdGlow)">
+    <circle cx="0" cy="0" r="22" fill="#1C1004" stroke="url(#amberGrad)" stroke-width="2.5"/>
+    <text x="0" y="6" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="#FDE047">T1</text>
+  </g>
+
+  <!-- Task Node 2 -->
+  <g transform="translate(205, 370)" filter="url(#tdGlow)">
+    <circle cx="0" cy="0" r="22" fill="#1C1004" stroke="url(#amberGrad)" stroke-width="2.5"/>
+    <text x="0" y="6" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="#FDE047">T2</text>
+  </g>
+
+  <!-- Task Node 3 -->
+  <g transform="translate(310, 370)" filter="url(#tdGlow)">
+    <circle cx="0" cy="0" r="22" fill="#1C1004" stroke="url(#orangeGrad)" stroke-width="2.5"/>
+    <text x="0" y="6" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="#FB923C">T3</text>
+  </g>
+
+  <!-- Task Node 4 -->
+  <g transform="translate(410, 370)" filter="url(#tdGlow)">
+    <circle cx="0" cy="0" r="22" fill="#1C1004" stroke="url(#orangeGrad)" stroke-width="2.5"/>
+    <text x="0" y="6" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="#FB923C">T4</text>
+  </g>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 46 96 L 46 46 L 96 46" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 96 L 466 46 L 416 46" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.6"/>
+  <path d="M 46 416 L 46 466 L 96 466" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 416 L 466 466 L 416 466" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.6"/>
+</svg>

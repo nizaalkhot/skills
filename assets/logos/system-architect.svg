@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="saBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1E1638"/>
+      <stop offset="60%" stop-color="#0E0A1D"/>
+      <stop offset="100%" stop-color="#05030A"/>
+    </radialGradient>
+
+    <!-- Indigo-Violet Main Gradient -->
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+
+    <!-- Cyan Electric Gradient -->
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <!-- Core Isometric Gradients -->
+    <linearGradient id="isoTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="isoLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="isoRight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3730A3"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="saGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#saBg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="url(#indigoGrad)" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Architectural Isometric Grid / Web -->
+  <g opacity="0.15" stroke="#A78BFA" stroke-width="1.5">
+    <line x1="256" y1="50" x2="430" y2="150"/>
+    <line x1="430" y1="150" x2="430" y2="360"/>
+    <line x1="430" y1="360" x2="256" y2="460"/>
+    <line x1="256" y1="460" x2="82" y2="360"/>
+    <line x1="82" y1="360" x2="82" y2="150"/>
+    <line x1="82" y1="150" x2="256" y2="50"/>
+
+    <line x1="256" y1="50" x2="256" y2="460"/>
+    <line x1="82" y1="150" x2="430" y2="360"/>
+    <line x1="82" y1="360" x2="430" y2="150"/>
+  </g>
+
+  <!-- Bus Lines connecting the 3 Pillars to Core -->
+  <g stroke="url(#neonCyan)" stroke-width="3" stroke-dasharray="6 4" opacity="0.8">
+    <!-- To Top Node (API/System) -->
+    <line x1="256" y1="210" x2="256" y2="135"/>
+    <!-- To Bottom-Left Node (Database) -->
+    <line x1="216" y1="280" x2="145" y2="350"/>
+    <!-- To Bottom-Right Node (Security) -->
+    <line x1="296" y1="280" x2="367" y2="350"/>
+  </g>
+
+  <!-- Center Hex Core (Nexus) -->
+  <g transform="translate(256, 250)" filter="url(#saGlow)">
+    <!-- Top Face -->
+    <polygon points="0,-45 42,-22 0,0 -42,-22" fill="url(#isoTop)"/>
+    <!-- Left Face -->
+    <polygon points="-42,-22 0,0 0,50 -42,28" fill="url(#isoLeft)"/>
+    <!-- Right Face -->
+    <polygon points="0,0 42,-22 42,28 0,50" fill="url(#isoRight)"/>
+    <!-- Center Core Glow Point -->
+    <circle cx="0" cy="0" r="8" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="14" fill="url(#neonCyan)" opacity="0.7"/>
+  </g>
+
+  <!-- Pillar 1: TOP (Architecture & APIs) -->
+  <g transform="translate(256, 115)" filter="url(#saGlow)">
+    <circle cx="0" cy="0" r="32" fill="#1E1B4B" stroke="url(#indigoGrad)" stroke-width="2.5"/>
+    <!-- Server / API layers -->
+    <rect x="-16" y="-12" width="32" height="6" rx="2" fill="url(#neonCyan)"/>
+    <rect x="-16" y="-2" width="32" height="6" rx="2" fill="url(#neonCyan)"/>
+    <rect x="-16" y="8" width="32" height="6" rx="2" fill="url(#neonCyan)"/>
+    <circle cx="10" cy="-9" r="1.5" fill="#10B981"/>
+    <circle cx="10" cy="1" r="1.5" fill="#10B981"/>
+    <circle cx="10" cy="11" r="1.5" fill="#10B981"/>
+  </g>
+
+  <!-- Pillar 2: BOTTOM-LEFT (Database & Schemas) -->
+  <g transform="translate(135, 365)" filter="url(#saGlow)">
+    <circle cx="0" cy="0" r="32" fill="#1E1B4B" stroke="url(#indigoGrad)" stroke-width="2.5"/>
+    <!-- DB Cylinder Stack -->
+    <ellipse cx="0" cy="-10" rx="15" ry="5" fill="url(#neonCyan)"/>
+    <path d="M -15,-10 L -15,0 A 15 5 0 0 0 15,0 L 15,-10 Z" fill="#6366F1" opacity="0.8"/>
+    <ellipse cx="0" cy="0" rx="15" ry="5" fill="none" stroke="url(#neonCyan)" stroke-width="1.5"/>
+    <path d="M -15,0 L -15,10 A 15 5 0 0 0 15,10 L 15,0 Z" fill="#4F46E5" opacity="0.9"/>
+    <ellipse cx="0" cy="10" rx="15" ry="5" fill="none" stroke="url(#neonCyan)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Pillar 3: BOTTOM-RIGHT (Security & Auth) -->
+  <g transform="translate(377, 365)" filter="url(#saGlow)">
+    <circle cx="0" cy="0" r="32" fill="#1E1B4B" stroke="url(#indigoGrad)" stroke-width="2.5"/>
+    <!-- Shield & Keyhole -->
+    <path d="M 0,-14 L 14,-7 C 14,8 0,16 0,16 C 0,16 -14,8 -14,-7 Z" fill="url(#indigoGrad)"/>
+    <circle cx="0" cy="-2" r="3" fill="#FFFFFF"/>
+    <polygon points="-1.5,-2 1.5,-2 2,5 -2,5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Floating Tech Data Nodes -->
+  <circle cx="196" cy="170" r="4" fill="#38BDF8"/>
+  <circle cx="316" cy="170" r="4" fill="#A78BFA"/>
+  <circle cx="256" cy="385" r="5" fill="#818CF8"/>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 46 96 L 46 46 L 96 46" fill="none" stroke="#8B5CF6" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 96 L 466 46 L 416 46" fill="none" stroke="#8B5CF6" stroke-width="3" opacity="0.6"/>
+  <path d="M 46 416 L 46 466 L 96 466" fill="none" stroke="#8B5CF6" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 416 L 466 466 L 416 466" fill="none" stroke="#8B5CF6" stroke-width="3" opacity="0.6"/>
+</svg>

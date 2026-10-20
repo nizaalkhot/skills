@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="sseBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#0E2319"/>
+      <stop offset="60%" stop-color="#07120C"/>
+      <stop offset="100%" stop-color="#020604"/>
+    </radialGradient>
+
+    <!-- Emerald / Green Passing Gradient -->
+    <linearGradient id="greenPass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- Crimson / Red Failing Test Gradient -->
+    <linearGradient id="redFail" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCA5A5"/>
+      <stop offset="50%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+
+    <!-- Cyan Refactor Accent -->
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A5F3FC"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <filter id="sseGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#sseBg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="url(#greenPass)" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Code Matrix Lines in Background -->
+  <g opacity="0.12" stroke="#10B981" stroke-width="1.5">
+    <line x1="80" y1="16" x2="80" y2="496"/>
+    <line x1="256" y1="16" x2="256" y2="496"/>
+    <line x1="432" y1="16" x2="432" y2="496"/>
+    <line x1="16" y1="140" x2="496" y2="140"/>
+    <line x1="16" y1="372" x2="496" y2="372"/>
+  </g>
+
+  <!-- Terminal Window Backplate -->
+  <g transform="translate(76, 96)" filter="url(#sseGlow)">
+    <rect x="0" y="0" width="360" height="320" rx="24" fill="#0A1811" stroke="url(#cyanAccent)" stroke-width="2.5" opacity="0.95"/>
+    
+    <!-- Window Header -->
+    <line x1="0" y1="48" x2="360" y2="48" stroke="#10B981" stroke-width="1.5" opacity="0.4"/>
+    <circle cx="28" cy="24" r="6" fill="#EF4444"/>
+    <circle cx="48" cy="24" r="6" fill="#F59E0B"/>
+    <circle cx="68" cy="24" r="6" fill="#10B981"/>
+
+    <!-- Terminal Prompt -->
+    <text x="96" y="30" font-family="monospace" font-size="14" fill="#6EE7B7" opacity="0.8">tdd-loop: red → green → refactor</text>
+  </g>
+
+  <!-- The TDD Infinity Cycle (Red -> Green -> Refactor) -->
+  <g transform="translate(256, 260)" filter="url(#sseGlow)">
+    <!-- Red Left Lobe (Failing Test First) -->
+    <path d="M 0,-15 C -45,-60 -115,-60 -115,0 C -115,60 -45,60 0,15" fill="none" stroke="url(#redFail)" stroke-width="10" stroke-linecap="round"/>
+    
+    <!-- Green Right Lobe (Passing Implementation) -->
+    <path d="M 0,15 C 45,60 115,60 115,0 C 115,-60 45,-60 0,-15" fill="none" stroke="url(#greenPass)" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Red Lobe Indicator Dot -->
+    <circle cx="-115" cy="0" r="10" fill="#EF4444"/>
+    <circle cx="-115" cy="0" r="4" fill="#FFFFFF"/>
+
+    <!-- Green Lobe Indicator Dot -->
+    <circle cx="115" cy="0" r="10" fill="#10B981"/>
+    <circle cx="115" cy="0" r="4" fill="#FFFFFF"/>
+
+    <!-- Center Nexus Pivot -->
+    <circle cx="0" cy="0" r="12" fill="#0A1811" stroke="url(#cyanAccent)" stroke-width="3"/>
+    <circle cx="0" cy="0" r="5" fill="#38BDF8"/>
+  </g>
+
+  <!-- Code Brackets { } flanking the loop -->
+  <!-- Left Bracket { -->
+  <g transform="translate(100, 220)" filter="url(#sseGlow)">
+    <path d="M 30, -35 C 10,-35 15,-10 0,0 C 15,10 10,35 30,35" fill="none" stroke="#FCA5A5" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right Bracket } -->
+  <g transform="translate(382, 220)" filter="url(#sseGlow)">
+    <path d="M -30, -35 C -10,-35 -15,-10 0,0 C -15,10 -10,35 -30,35" fill="none" stroke="#6EE7B7" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Terminal Command Prompt Text at Bottom of Window -->
+  <g transform="translate(110, 360)">
+    <text x="0" y="20" font-family="monospace" font-weight="900" font-size="24" fill="#6EE7B7">&gt;_ git commit -m &quot;feat: [x]&quot;</text>
+  </g>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 46 96 L 46 46 L 96 46" fill="none" stroke="#10B981" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 96 L 466 46 L 416 46" fill="none" stroke="#10B981" stroke-width="3" opacity="0.6"/>
+  <path d="M 46 416 L 46 466 L 96 466" fill="none" stroke="#10B981" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 416 L 466 466 L 416 466" fill="none" stroke="#10B981" stroke-width="3" opacity="0.6"/>
+</svg>

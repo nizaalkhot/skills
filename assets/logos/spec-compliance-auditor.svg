@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="scaBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#0E2342"/>
+      <stop offset="60%" stop-color="#071324"/>
+      <stop offset="100%" stop-color="#02060D"/>
+    </radialGradient>
+
+    <!-- Blue Royal Shield Gradient -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="40%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+
+    <!-- Emerald Checkmark Gradient -->
+    <linearGradient id="auditCheck" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Cyan Laser Rim -->
+    <linearGradient id="laserCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="scaGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#scaBg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="url(#shieldGrad)" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Scanning Rays / Concentric Security Rings -->
+  <g opacity="0.16" stroke="#60A5FA" stroke-width="1.5" fill="none">
+    <circle cx="256" cy="256" r="180"/>
+    <circle cx="256" cy="256" r="130" stroke-dasharray="8 6"/>
+    <circle cx="256" cy="256" r="80"/>
+    <line x1="256" y1="50" x2="256" y2="462"/>
+    <line x1="50" y1="256" x2="462" y2="256"/>
+  </g>
+
+  <!-- Primary Heavy Tech Shield -->
+  <g filter="url(#scaGlow)">
+    <!-- Outer Shield Border -->
+    <path d="M 256, 80 L 380, 140 C 380, 270 256, 380 256, 410 C 256, 380 132, 270 132, 140 Z" fill="#0C1B33" stroke="url(#shieldGrad)" stroke-width="5"/>
+    
+    <!-- Inner Inset Shield -->
+    <path d="M 256, 110 L 354, 156 C 354, 256 256, 348 256, 374 C 256, 348 158, 256 158, 156 Z" fill="#081426" stroke="url(#laserCyan)" stroke-width="2" opacity="0.8"/>
+  </g>
+
+  <!-- Two-Key Verification Mechanism (Left Key: Implementer [-], Right Key: Auditor [✓]) -->
+  <!-- Left Key [-] -->
+  <g transform="translate(185, 230)" filter="url(#scaGlow)">
+    <!-- Key Head -->
+    <circle cx="0" cy="0" r="16" fill="none" stroke="url(#laserCyan)" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="6" fill="#38BDF8"/>
+    <!-- Key Stem -->
+    <line x1="0" y1="16" x2="0" y2="60" stroke="url(#laserCyan)" stroke-width="4" stroke-linecap="round"/>
+    <!-- Key Teeth -->
+    <line x1="0" y1="42" x2="12" y2="42" stroke="url(#laserCyan)" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="0" y1="54" x2="8" y2="54" stroke="url(#laserCyan)" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right Key [✓] -->
+  <g transform="translate(327, 230)" filter="url(#scaGlow)">
+    <!-- Key Head -->
+    <circle cx="0" cy="0" r="16" fill="none" stroke="url(#auditCheck)" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="6" fill="#10B981"/>
+    <!-- Key Stem -->
+    <line x1="0" y1="16" x2="0" y2="60" stroke="url(#auditCheck)" stroke-width="4" stroke-linecap="round"/>
+    <!-- Key Teeth -->
+    <line x1="0" y1="42" x2="-12" y2="42" stroke="url(#auditCheck)" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="0" y1="54" x2="-8" y2="54" stroke="url(#auditCheck)" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Central Verification Seal with Big Checkmark -->
+  <g transform="translate(256, 235)" filter="url(#scaGlow)">
+    <!-- Seal Medallion -->
+    <circle cx="0" cy="0" r="44" fill="#042F2E" stroke="url(#auditCheck)" stroke-width="4"/>
+    <circle cx="0" cy="0" r="36" fill="none" stroke="#6EE7B7" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+    <!-- Audited Checkmark [✓] -->
+    <path d="M -18,0 L -6,14 L 20,-14" fill="none" stroke="url(#auditCheck)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Anti-Gaming Badge / Tag at bottom -->
+  <g transform="translate(196, 320)">
+    <rect x="0" y="0" width="120" height="26" rx="13" fill="#1E3A8A" stroke="url(#laserCyan)" stroke-width="1.5"/>
+    <text x="60" y="17" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="12" fill="#BAE6FD">2-KEY VERIFIED</text>
+  </g>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 46 96 L 46 46 L 96 46" fill="none" stroke="#3B82F6" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 96 L 466 46 L 416 46" fill="none" stroke="#3B82F6" stroke-width="3" opacity="0.6"/>
+  <path d="M 46 416 L 46 466 L 96 466" fill="none" stroke="#3B82F6" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 416 L 466 466 L 416 466" fill="none" stroke="#3B82F6" stroke-width="3" opacity="0.6"/>
+</svg>

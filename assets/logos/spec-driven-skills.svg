@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="mainBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#151A2E"/>
+      <stop offset="60%" stop-color="#0B0E17"/>
+      <stop offset="100%" stop-color="#030408"/>
+    </radialGradient>
+
+    <!-- Main Suite Gradient -->
+    <linearGradient id="mainShield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="30%" stop-color="#818CF8"/>
+      <stop offset="70%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#F43F5E"/>
+    </linearGradient>
+
+    <!-- Core Golden Spec Gradient -->
+    <linearGradient id="goldCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="mainGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#mainBg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="url(#mainShield)" stroke-width="3" stroke-opacity="0.5"/>
+
+  <!-- Orbital Ring of 9 Skill Nodes -->
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#818CF8" stroke-width="1.5" stroke-opacity="0.25" stroke-dasharray="6 4"/>
+
+  <!-- 9 Orbiting Satellite Nodes (representing all 9 skills) -->
+  <!-- 1: Product Specifier (Emerald) -->
+  <circle cx="256" cy="80" r="10" fill="#10B981" filter="url(#mainGlow)"/>
+  <!-- 2: System Architect (Indigo) -->
+  <circle cx="369" cy="121" r="10" fill="#6366F1" filter="url(#mainGlow)"/>
+  <!-- 3: Design & Standards Lead (Rose) -->
+  <circle cx="430" cy="216" r="10" fill="#F43F5E" filter="url(#mainGlow)"/>
+  <!-- 4: Task Decomposer (Amber) -->
+  <circle cx="410" cy="331" r="10" fill="#F59E0B" filter="url(#mainGlow)"/>
+  <!-- 5: Senior Software Engineer (Green/Red) -->
+  <circle cx="316" cy="419" r="10" fill="#10B981" filter="url(#mainGlow)"/>
+  <!-- 6: Spec Compliance Auditor (Azure Blue) -->
+  <circle cx="196" cy="419" r="10" fill="#3B82F6" filter="url(#mainGlow)"/>
+  <!-- 7: DevOps Infrastructure Engineer (Teal) -->
+  <circle cx="102" cy="331" r="10" fill="#0D9488" filter="url(#mainGlow)"/>
+  <!-- 8: Change & Triage Lead (Orange Flame) -->
+  <circle cx="82" cy="216" r="10" fill="#EA580C" filter="url(#mainGlow)"/>
+  <!-- 9: Brownfield Reverse Specifier (Topaz Bronze) -->
+  <circle cx="143" cy="121" r="10" fill="#D97706" filter="url(#mainGlow)"/>
+
+  <!-- Interconnecting Constellation Lines -->
+  <g opacity="0.2" stroke="url(#mainShield)" stroke-width="1.5">
+    <line x1="256" y1="80" x2="369" y2="121"/>
+    <line x1="369" y1="121" x2="430" y2="216"/>
+    <line x1="430" y1="216" x2="410" y2="331"/>
+    <line x1="410" y1="331" x2="316" y2="419"/>
+    <line x1="316" y1="419" x2="196" y2="419"/>
+    <line x1="196" y1="419" x2="102" y2="331"/>
+    <line x1="102" y1="331" x2="82" y2="216"/>
+    <line x1="82" y1="216" x2="143" y2="121"/>
+    <line x1="143" y1="121" x2="256" y2="80"/>
+
+    <!-- Star Chords -->
+    <line x1="256" y1="80" x2="316" y2="419"/>
+    <line x1="256" y1="80" x2="196" y2="419"/>
+    <line x1="369" y1="121" x2="102" y2="331"/>
+    <line x1="143" y1="121" x2="410" y2="331"/>
+  </g>
+
+  <!-- Central Great Spec Emblem Shield -->
+  <g filter="url(#mainGlow)">
+    <polygon points="256,130 366,190 366,320 256,380 146,320 146,190" fill="#0E1222" stroke="url(#mainShield)" stroke-width="4.5"/>
+  </g>
+
+  <!-- Inner Golden Spec Core / Two-Key Verification Checkmark -->
+  <g transform="translate(256, 255)" filter="url(#mainGlow)">
+    <!-- Central Prism -->
+    <polygon points="0,-48 38,-24 38,24 0,48 -38,24 -38,-24" fill="#181335" stroke="url(#goldCore)" stroke-width="3"/>
+    
+    <!-- Code Bracket and Checkmark -->
+    <path d="M -16,-2 L -6,10 L 18,-14" fill="none" stroke="url(#goldCore)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Suite Title Ribbon -->
+  <g transform="translate(146, 420)">
+    <rect x="0" y="0" width="220" height="30" rx="15" fill="#151A2E" stroke="url(#mainShield)" stroke-width="1.5"/>
+    <text x="110" y="20" text-anchor="middle" font-family="monospace" font-weight="900" font-size="13" fill="#E2E8F0" letter-spacing="1">SPEC-DRIVEN</text>
+  </g>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 46 96 L 46 46 L 96 46" fill="none" stroke="#818CF8" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 96 L 466 46 L 416 46" fill="none" stroke="#818CF8" stroke-width="3" opacity="0.6"/>
+  <path d="M 46 416 L 46 466 L 96 466" fill="none" stroke="#818CF8" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 416 L 466 466 L 416 466" fill="none" stroke="#818CF8" stroke-width="3" opacity="0.6"/>
+</svg>

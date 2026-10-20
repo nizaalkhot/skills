@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="dieBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#0E2829"/>
+      <stop offset="60%" stop-color="#071718"/>
+      <stop offset="100%" stop-color="#020808"/>
+    </radialGradient>
+
+    <!-- Teal-Cyan Gradient -->
+    <linearGradient id="tealCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="50%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+
+    <!-- Orange Launch Accent -->
+    <linearGradient id="launchOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDBA74"/>
+      <stop offset="50%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </linearGradient>
+
+    <!-- Isometric Container Gradients -->
+    <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <linearGradient id="cubeLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="100%" stop-color="#115E59"/>
+    </linearGradient>
+    <linearGradient id="cubeRight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#134E4A"/>
+      <stop offset="100%" stop-color="#042F2E"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="dieGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#dieBg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="url(#tealCyan)" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Orbital Ring / Grid Rays -->
+  <g opacity="0.15" stroke="#2DD4BF" stroke-width="1.5" fill="none">
+    <circle cx="256" cy="256" r="190"/>
+    <ellipse cx="256" cy="256" rx="200" ry="70" transform="rotate(-30, 256, 256)"/>
+    <ellipse cx="256" cy="256" rx="200" ry="70" transform="rotate(30, 256, 256)"/>
+  </g>
+
+  <!-- Continuous CI/CD Pipeline Loop (Infinity Orbit around container) -->
+  <g transform="translate(256, 256) rotate(-25)" filter="url(#dieGlow)">
+    <ellipse cx="0" cy="0" rx="180" ry="65" fill="none" stroke="url(#tealCyan)" stroke-width="6" stroke-dasharray="14 10"/>
+    <!-- Orbiting Deployment Packets -->
+    <circle cx="180" cy="0" r="9" fill="#5EEAD4"/>
+    <circle cx="-180" cy="0" r="9" fill="#F97316"/>
+    <circle cx="0" cy="65" r="7" fill="#5EEAD4"/>
+    <circle cx="0" cy="-65" r="7" fill="#F97316"/>
+  </g>
+
+  <!-- Floating 3D Isometric Container Block (Docker / K8s Container) -->
+  <g transform="translate(256, 240)" filter="url(#dieGlow)">
+    <!-- Top Face -->
+    <polygon points="0,-54 62,-27 0,0 -62,-27" fill="url(#cubeTop)"/>
+    <!-- Left Face -->
+    <polygon points="-62,-27 0,0 0,65 -62,38" fill="url(#cubeLeft)"/>
+    <!-- Right Face -->
+    <polygon points="0,0 62,-27 62,38 0,65" fill="url(#cubeRight)"/>
+
+    <!-- Container Grid Grooves (like real shipping/docker container) -->
+    <!-- Left face vertical grooves -->
+    <line x1="-46" y1="-18" x2="-46" y2="44" stroke="#14B8A6" stroke-width="2" opacity="0.6"/>
+    <line x1="-31" y1="-11" x2="-31" y2="51" stroke="#14B8A6" stroke-width="2" opacity="0.6"/>
+    <line x1="-15" y1="-5" x2="-15" y2="58" stroke="#14B8A6" stroke-width="2" opacity="0.6"/>
+
+    <!-- Right face vertical grooves -->
+    <line x1="15" y1="-5" x2="15" y2="58" stroke="#0D9488" stroke-width="2" opacity="0.6"/>
+    <line x1="31" y1="-11" x2="31" y2="51" stroke="#0D9488" stroke-width="2" opacity="0.6"/>
+    <line x1="46" y1="-18" x2="46" y2="44" stroke="#0D9488" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- Cloud Infrastructure Arc at Top -->
+  <g transform="translate(256, 120)" filter="url(#dieGlow)">
+    <path d="M -50,15 A 25,25 0 0,1 -10,-10 A 35,35 0 0,1 40,-5 A 25,25 0 0,1 55,15 Z" fill="#042F2E" stroke="url(#tealCyan)" stroke-width="3"/>
+    <!-- Server pulse in cloud -->
+    <circle cx="-10" cy="8" r="3" fill="#2DD4BF"/>
+    <circle cx="10" cy="8" r="3" fill="#F97316"/>
+    <circle cx="30" cy="8" r="3" fill="#2DD4BF"/>
+  </g>
+
+  <!-- Fast Launch Thruster / Rocket Icon at Bottom -->
+  <g transform="translate(256, 395)" filter="url(#dieGlow)">
+    <!-- Deployment Rocket Capsule -->
+    <path d="M 0,-25 C 12,-10 16,10 12,20 L -12,20 C -16,10 -12,-10 0,-25 Z" fill="url(#launchOrange)"/>
+    <!-- Rocket Window -->
+    <circle cx="0" cy="-2" r="4" fill="#FFFFFF"/>
+    <!-- Rocket Fins -->
+    <polygon points="-12,12 -22,22 -12,22" fill="#EA580C"/>
+    <polygon points="12,12 22,22 12,22" fill="#EA580C"/>
+    <!-- Thruster Flame -->
+    <polygon points="-6,22 0,36 6,22" fill="#FDE047"/>
+  </g>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 46 96 L 46 46 L 96 46" fill="none" stroke="#0D9488" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 96 L 466 46 L 416 46" fill="none" stroke="#0D9488" stroke-width="3" opacity="0.6"/>
+  <path d="M 46 416 L 46 466 L 96 466" fill="none" stroke="#0D9488" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 416 L 466 466 L 416 466" fill="none" stroke="#0D9488" stroke-width="3" opacity="0.6"/>
+</svg>

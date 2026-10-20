@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="brsBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#281C0C"/>
+      <stop offset="60%" stop-color="#140D05"/>
+      <stop offset="100%" stop-color="#050301"/>
+    </radialGradient>
+
+    <!-- Bronze-Gold Archaeologist Gradient -->
+    <linearGradient id="bronzeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="40%" stop-color="#F59E0B"/>
+      <stop offset="80%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+
+    <!-- Sonar Scanner Topaz Gradient -->
+    <linearGradient id="sonarTopaz" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <!-- Scanner Cone Gradient -->
+    <linearGradient id="scanBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="brsGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#brsBg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="url(#bronzeGrad)" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Archeological Grid & Depth Coordinates in Background -->
+  <g opacity="0.15" stroke="#F59E0B" stroke-width="1.5">
+    <line x1="80" y1="16" x2="80" y2="496"/>
+    <line x1="256" y1="16" x2="256" y2="496"/>
+    <line x1="432" y1="16" x2="432" y2="496"/>
+    <line x1="16" y1="140" x2="496" y2="140"/>
+    <line x1="16" y1="230" x2="496" y2="230"/>
+    <line x1="16" y1="320" x2="496" y2="320"/>
+    <line x1="16" y1="410" x2="496" y2="410"/>
+  </g>
+
+  <!-- Sonar Scanner Cone Beam (Scanning through legacy strata) -->
+  <polygon points="256,90 410,380 102,380" fill="url(#scanBeam)"/>
+
+  <!-- Strata Layers: From Legacy Code (Bottom) to Structured Specs (Top) -->
+  <g filter="url(#brsGlow)">
+    <!-- Layer 3: Deep Legacy Strata (Bottom, jagged code runes) -->
+    <path d="M 96,380 L 160,370 L 220,385 L 290,368 L 350,380 L 416,370 L 416,420 L 96,420 Z" fill="#2E1C0A" stroke="#78350F" stroke-width="2"/>
+    <g opacity="0.6" stroke="#92400E" stroke-width="2" stroke-linecap="round">
+      <line x1="130" y1="395" x2="170" y2="395"/>
+      <line x1="200" y1="400" x2="260" y2="400"/>
+      <line x1="290" y1="395" x2="330" y2="395"/>
+      <line x1="350" y1="405" x2="390" y2="405"/>
+    </g>
+
+    <!-- Layer 2: Intermediate Reconstruction Layer (Middle, semi-structured) -->
+    <path d="M 118,290 L 180,282 L 256,295 L 330,284 L 394,290 L 410,350 L 102,350 Z" fill="#3D260D" stroke="url(#bronzeGrad)" stroke-width="2.5"/>
+    <g opacity="0.8" stroke="#F59E0B" stroke-width="2" stroke-dasharray="8 4">
+      <line x1="140" y1="318" x2="230" y2="318"/>
+      <line x1="250" y1="318" x2="370" y2="318"/>
+    </g>
+
+    <!-- Layer 1: Crystallized Canonical Specs Layer (Top, pristine architecture blueprint) -->
+    <rect x="156" y="140" width="200" height="120" rx="16" fill="#172535" stroke="url(#sonarTopaz)" stroke-width="3"/>
+    
+    <!-- Blueprint Grid inside Top Layer -->
+    <line x1="156" y1="180" x2="356" y2="180" stroke="#38BDF8" stroke-width="1.5" opacity="0.4"/>
+    <line x1="156" y1="220" x2="356" y2="220" stroke="#38BDF8" stroke-width="1.5" opacity="0.4"/>
+    <line x1="256" y1="140" x2="256" y2="260" stroke="#38BDF8" stroke-width="1.5" opacity="0.4"/>
+    <circle cx="206" cy="160" r="5" fill="#38BDF8"/>
+    <circle cx="306" cy="160" r="5" fill="#F59E0B"/>
+    <rect x="180" y="196" width="52" height="8" rx="4" fill="#38BDF8"/>
+    <rect x="280" y="196" width="52" height="8" rx="4" fill="#F59E0B"/>
+    <rect x="180" y="236" width="152" height="8" rx="4" fill="#E2E8F0" opacity="0.8"/>
+  </g>
+
+  <!-- Sonar Emitter / Archeologist Loupe Lens at the Apex -->
+  <g transform="translate(256, 95)" filter="url(#brsGlow)">
+    <circle cx="0" cy="0" r="28" fill="#1C1307" stroke="url(#sonarTopaz)" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="14" fill="url(#bronzeGrad)"/>
+    <circle cx="0" cy="0" r="6" fill="#FFFFFF"/>
+    <!-- Sonar Wave Arcs -->
+    <path d="M -40,15 A 42,42 0 0,0 40,15" fill="none" stroke="url(#sonarTopaz)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M -55,30 A 62,62 0 0,0 55,30" fill="none" stroke="url(#sonarTopaz)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 4"/>
+  </g>
+
+  <!-- Excavation Depth Gauge Badge at Bottom -->
+  <g transform="translate(186, 430)">
+    <rect x="0" y="0" width="140" height="26" rx="13" fill="#2E1C0A" stroke="url(#bronzeGrad)" stroke-width="1.5"/>
+    <text x="70" y="17" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="11" fill="#FDE68A">REVERSE SPECIFIED</text>
+  </g>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 46 96 L 46 46 L 96 46" fill="none" stroke="#D97706" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 96 L 466 46 L 416 46" fill="none" stroke="#D97706" stroke-width="3" opacity="0.6"/>
+  <path d="M 46 416 L 46 466 L 96 466" fill="none" stroke="#D97706" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 416 L 466 466 L 416 466" fill="none" stroke="#D97706" stroke-width="3" opacity="0.6"/>
+</svg>

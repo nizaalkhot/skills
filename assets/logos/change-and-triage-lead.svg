@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="ctlBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#2D1108"/>
+      <stop offset="60%" stop-color="#180703"/>
+      <stop offset="100%" stop-color="#080201"/>
+    </radialGradient>
+
+    <!-- Flame / Orange-Red Triage Gradient -->
+    <linearGradient id="triageFlame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="35%" stop-color="#FB923C"/>
+      <stop offset="70%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#BE123C"/>
+    </linearGradient>
+
+    <!-- Hot Coral Gradient -->
+    <linearGradient id="coralGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDA4AF"/>
+      <stop offset="100%" stop-color="#F43F5E"/>
+    </linearGradient>
+
+    <!-- Gold Lightning Gradient -->
+    <linearGradient id="goldBolt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="50%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="ctlGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#ctlBg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="url(#triageFlame)" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Triage Radar Scan / Wave Rings -->
+  <g opacity="0.15" stroke="#FB923C" stroke-width="1.5" fill="none">
+    <polygon points="256,70 436,380 76,380"/>
+    <circle cx="256" cy="270" r="160"/>
+    <circle cx="256" cy="270" r="90" stroke-dasharray="6 4"/>
+    <line x1="256" y1="40" x2="256" y2="472"/>
+  </g>
+
+  <!-- Dual Track Triage Branch (Track 1: Fix / Hotfix, Track 2: Feature / Patch) -->
+  <g opacity="0.4" stroke-width="3" fill="none">
+    <path d="M 120 400 C 120 320, 230 300, 256 220" stroke="#EF4444" stroke-dasharray="6 4"/>
+    <path d="M 392 400 C 392 320, 282 300, 256 220" stroke="#F59E0B" stroke-dasharray="6 4"/>
+  </g>
+
+  <!-- Central Great Delta (Change Δ) Structure -->
+  <g filter="url(#ctlGlow)">
+    <!-- Outer Delta Frame -->
+    <polygon points="256,105 408,370 104,370" fill="#200B05" stroke="url(#triageFlame)" stroke-width="6" stroke-linejoin="round"/>
+
+    <!-- Inner Cutout Delta -->
+    <polygon points="256,190 340,335 172,335" fill="#120502" stroke="url(#coralGlow)" stroke-width="2" stroke-opacity="0.8"/>
+  </g>
+
+  <!-- Central P0 Hotfix Lightning Bolt / Beacon -->
+  <g transform="translate(256, 250)" filter="url(#ctlGlow)">
+    <polygon points="4,-70 -26,-15 -2,-15 -14,45 26,-5 2,-5 18,-70" fill="url(#goldBolt)"/>
+  </g>
+
+  <!-- Supercedes Version Patch Tag [v2 SUPERSEDES v1] at bottom -->
+  <g transform="translate(146, 395)" filter="url(#ctlGlow)">
+    <rect x="0" y="0" width="220" height="32" rx="16" fill="#3B1209" stroke="url(#triageFlame)" stroke-width="2"/>
+    <text x="110" y="21" text-anchor="middle" font-family="monospace" font-weight="900" font-size="12" fill="#FCD34D">[SUPERSEDES PATCH]</text>
+  </g>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 46 96 L 46 46 L 96 46" fill="none" stroke="#EA580C" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 96 L 466 46 L 416 46" fill="none" stroke="#EA580C" stroke-width="3" opacity="0.6"/>
+  <path d="M 46 416 L 46 466 L 96 466" fill="none" stroke="#EA580C" stroke-width="3" opacity="0.6"/>
+  <path d="M 466 416 L 466 466 L 416 466" fill="none" stroke="#EA580C" stroke-width="3" opacity="0.6"/>
+</svg>

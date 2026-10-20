@@ -19,7 +19,7 @@ Compatible with **Cursor, Claude Code, GitHub Copilot, Codex, Windsurf, OpenCode
 
 ### The 4 Core Principles of this Playbook
 1. **Granular Spec Indexing**: No code is written until requirements, architecture, schemas, and security are frozen in `specs/` with granular IDs (`PRD-AC-*`, `ARCH-API-*`, `DB-TBL-*`, `SEC-AUTH-*`). Tasks only load the exact spec sections they touch.
-2. **Two-Key Verification (`[ ]` $\rightarrow$ `[-]` $\rightarrow$ `[x]`)**: The implementing engineer cannot mark its own work complete. It transitions tasks to `[-]` (Awaiting Audit); only the independent compliance auditor can inspect the code and promote it to `[x]`.
+2. **Two-Key Verification (`[ ]` $\rightarrow$ `[-]` $\rightarrow$ `[✓]`)**: The implementing engineer cannot mark its own work complete. It transitions tasks to `[-]` (Awaiting Audit); only the independent compliance auditor can inspect the code and promote it to `[✓]`.
 3. **Strict Red-Green-Refactor TDD**: Every task requires a failing test first. A strict **3-Strike Cap** halts infinite debugging loops and generates an escalation report.
 4. **Safe Day-2 Patches**: Bugs require reproduction tests, refactors require characterization tests, and schema changes use versioned `[v2 — SUPERSEDES v1]` patches so specifications remain the permanent source of truth.
 
@@ -110,7 +110,7 @@ specs/
 ├── DESIGN_SYSTEM.md   # [DS-TOK-*, DS-TYP-*, DS-CMP-*, DS-A11Y-*, DS-CLI-*] UI tokens, 6 states & CLI ergonomics
 ├── CODE_STYLE.md      # [CS-DIR-*, CS-NAM-*, CS-TYP-*, CS-ERR-*] Folder tree, strict typing & lint CLI commands
 ├── TESTING.md         # [TST-CFG-*, TST-DB-*, TST-MCK-*, TST-EVAL-*, TST-MAP-*] Runners, anti-gaming & AI evals
-└── TASKS.md           # Dependency-ordered task graph ([ ] Pending -> [-] Awaiting Audit -> [x] Audited)
+└── TASKS.md           # Dependency-ordered task graph ([ ] Pending -> [-] Awaiting Audit -> [✓] Audited)
 ```
 
 ---
@@ -124,7 +124,7 @@ specs/
 | **3** | [`design-and-standards-lead`](./skills/design-and-standards-lead/SKILL.md) | Staff Frontend & Quality Lead | `PRD.md`, `ARCHITECTURE.md`, `DATABASE.md`, `SECURITY.md` | `specs/DESIGN_SYSTEM.md`<br>`specs/CODE_STYLE.md`<br>`specs/TESTING.md` |
 | **4** | [`task-decomposer`](./skills/task-decomposer/SKILL.md) | Agile Delivery Lead | All 7 `specs/*.md` files | `specs/TASKS.md` (Greenfield or Delta Mode) |
 | **5** | [`senior-software-engineer`](./skills/senior-software-engineer/SKILL.md) | Senior Full-Stack Engineer | `specs/TASKS.md` + Referenced Spec IDs | Code + Tests + Atomic Git Commit (`[ ]` $\rightarrow$ `[-]`) |
-| **6** | [`spec-compliance-auditor`](./skills/spec-compliance-auditor/SKILL.md) | Independent QA & Security Reviewer | `[-]` tasks in `TASKS.md` + Referenced Spec IDs | Audits code/tests (`[-]` $\rightarrow$ `[x]` or rejects to `[ ]`) |
+| **6** | [`spec-compliance-auditor`](./skills/spec-compliance-auditor/SKILL.md) | Independent QA & Security Reviewer | `[-]` tasks in `TASKS.md` + Referenced Spec IDs | Audits code/tests (`[-]` $\rightarrow$ `[✓]` or rejects to `[ ]`) |
 | **7** | [`devops-infrastructure-engineer`](./skills/devops-infrastructure-engineer/SKILL.md) | Principal DevOps Engineer | Tracked Infra Tasks in `TASKS.md` + Specs | `.env.example`, `.github/workflows/ci.yml`, `Dockerfile` |
 | **8** | [`change-and-triage-lead`](./skills/change-and-triage-lead/SKILL.md) | Day-2 Release & Triage Architect | Hotfix / Bug / Refactor / Feature Request | Patches `specs/*.md` (`[SUPERSEDES]`) + Appends to `TASKS.md` |
 | **9** | [`brownfield-reverse-specifier`](./skills/brownfield-reverse-specifier/SKILL.md) | Staff Systems Archaeologist | Existing Repo without `specs/` | Reverse-engineers all 7 `specs/*.md` + baseline `TASKS.md` |
@@ -145,7 +145,7 @@ Each specification skill includes an **Overwrite Guard** (refusing to clobber ex
    > `Use task-decomposer to build specs/TASKS.md from all 7 spec files.` $\rightarrow$ Verifies 100% `PRD-AC-*` coverage and generates `Phase 0` (scaffolding + early CI), Vertical Feature Slices split into atomic $\le 3$-file tasks, and final production containerization tasks.
 5. **Implementation & Audit Loop (`senior-software-engineer` + `devops-infrastructure-engineer` + `spec-compliance-auditor`):**
    - Run `senior-software-engineer` (or `devops-infrastructure-engineer` for `Task 0.3` / `Task Final.1`) to implement the next `- [ ]` task via Red-Green-Refactor TDD, transition it to `- [-]`, and create an atomic git commit.
-   - Run `spec-compliance-auditor` after each task (or at the end of each Phase) to independently verify compliance and promote `- [-]` tasks to `- [x]`.
+   - Run `spec-compliance-auditor` after each task (or at the end of each Phase) to independently verify compliance and promote `- [-]` tasks to `- [✓]`.
 
 ---
 
@@ -153,7 +153,7 @@ Each specification skill includes an **Overwrite Guard** (refusing to clobber ex
 
 If you have an existing codebase without a `specs/` directory:
 > `Use brownfield-reverse-specifier to document this repository into specs/.`
-- Inspects your existing routes, schemas, auth, UI, and tests without modifying code, generating all 7 `specs/*.md` files and a baseline `specs/TASKS.md` with completed features marked `[x]`.
+- Inspects your existing routes, schemas, auth, UI, and tests without modifying code, generating all 7 `specs/*.md` files and a baseline `specs/TASKS.md` with completed features marked `[✓]`.
 
 ---
 
@@ -173,7 +173,7 @@ Always route post-MVP changes through **`change-and-triage-lead`**:
 
 - **3-Strike Retry Cap:** If `senior-software-engineer` fails to resolve the same test/type/lint error after 3 attempts, it halts and outputs an escalation report instead of looping infinitely.
 - **Anti-Gaming Ban:** `.skip`, `.only`, weakened assertions, `any`, `@ts-ignore`, `# type: ignore`, `eslint-disable`, and `# noqa` are strictly banned and checked by `spec-compliance-auditor`.
-- **Two-Key Verification (`[ ]` $\rightarrow$ `[-]` $\rightarrow$ `[x]`):** The engineer marks completed tasks `[-]`; the independent auditor promotes them to `[x]`.
+- **Two-Key Verification (`[ ]` $\rightarrow$ `[-]` $\rightarrow$ `[✓]`):** The engineer marks completed tasks `[-]`; the independent auditor promotes them to `[✓]`.
 
 ---
 

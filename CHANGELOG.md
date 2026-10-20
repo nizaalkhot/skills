@@ -14,7 +14,7 @@ The complete **9-Skill Spec-Driven Multi-Agent Pipeline** for autonomous softwar
 - **`design-and-standards-lead`**: Generates `specs/DESIGN_SYSTEM.md`, `specs/CODE_STYLE.md`, and `specs/TESTING.md` enforcing UI states, anti-gaming rules, and strict linting.
 - **`task-decomposer`**: Converts all 7 specification files into a dependency-ordered, atomic task graph in `specs/TASKS.md` (Greenfield and Delta Modes).
 - **`senior-software-engineer`**: Executes unblocked tasks using strict Red-Green-Refactor TDD, an automated 3-strike retry cap, and atomic git commits.
-- **`spec-compliance-auditor`**: Independently audits completed tasks `[-]` against all 7 specs, verifying anti-gaming compliance and promoting to `[x]`.
+- **`spec-compliance-auditor`**: Independently audits completed tasks `[-]` against all 7 specs, verifying anti-gaming compliance and promoting to `[✓]`.
 - **`devops-infrastructure-engineer`**: Provisions containerization, CI/CD GitHub workflows, and environment configurations.
 - **`change-and-triage-lead`**: Manages Day-2 changes (P0 production hotfixes, bug reproductions, refactor tests, and `[SUPERSEDES]` spec patches).
 - **`brownfield-reverse-specifier`**: Reverse-engineers un-spec'd codebases into the complete 7-spec suite without altering production code.
